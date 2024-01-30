@@ -1,4 +1,4 @@
-package model
+package pgquery
 
 import "strconv"
 

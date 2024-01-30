@@ -1,4 +1,4 @@
-package model
+package pgquery
 
 // Select query params
 type SelectQuery struct {

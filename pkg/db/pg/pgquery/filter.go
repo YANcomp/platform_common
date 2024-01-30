@@ -1,4 +1,4 @@
-package model
+package pgquery
 
 import (
 	"github.com/Masterminds/squirrel"
