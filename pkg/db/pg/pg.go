@@ -31,8 +31,6 @@ func NewDB(dbc *pgxpool.Pool) db.DB {
 }
 
 func (p *pg) ScanOneContext(ctx context.Context, dest interface{}, q db.Query, args ...interface{}) error {
-	logQuery(ctx, q, args...)
-
 	row, err := p.QueryContext(ctx, q, args...)
 	if err != nil {
 		return err
@@ -42,8 +40,6 @@ func (p *pg) ScanOneContext(ctx context.Context, dest interface{}, q db.Query, a
 }
 
 func (p *pg) ScanAllContext(ctx context.Context, dest interface{}, q db.Query, args ...interface{}) error {
-	logQuery(ctx, q, args...)
-
 	rows, err := p.QueryContext(ctx, q, args...)
 	if err != nil {
 		return err
