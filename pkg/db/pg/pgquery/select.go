@@ -1,6 +1,9 @@
 package pgquery
 
-import "reflect"
+import (
+	"reflect"
+	"strings"
+)
 
 // Select query params
 type SelectQuery struct {
@@ -16,7 +19,7 @@ func (s *SelectQuery) SetField(filed string) error {
 	if filed == "" {
 		return nil
 	}
-	s.Fields = append(s.Fields, filed)
+	s.Fields = append(s.Fields, strings.ToLower(filed))
 
 	return nil
 }
