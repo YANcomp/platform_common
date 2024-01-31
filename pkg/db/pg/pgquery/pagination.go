@@ -1,6 +1,9 @@
 package pgquery
 
-import "strconv"
+import (
+	"reflect"
+	"strconv"
+)
 
 const (
 	defaultLimit = 25
@@ -10,6 +13,10 @@ const (
 type PaginationQuery struct {
 	Limit  int `json:"limit,omitempty"`
 	Offset int `json:"offset,omitempty"`
+}
+
+func (q *PaginationQuery) IsEmpty() bool {
+	return reflect.DeepEqual(q, &PaginationQuery{})
 }
 
 // Set limit
