@@ -2,6 +2,7 @@ package pgquery
 
 import (
 	"github.com/Masterminds/squirrel"
+	"log"
 	"reflect"
 )
 
@@ -109,6 +110,7 @@ func (f *Filter) condition() squirrel.Sqlizer {
 	//if f.join {
 	//	return squirrel.Eq{f.column: f.value}
 	//}
+	log.Println(f.value)
 	switch f.fType {
 	case FilterTypeNotEQ:
 		return squirrel.NotEq{f.column: f.value}
