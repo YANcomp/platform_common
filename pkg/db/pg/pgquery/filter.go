@@ -111,6 +111,7 @@ func (f *Filter) condition() squirrel.Sqlizer {
 	//	return squirrel.Eq{f.column: f.value}
 	//}
 	log.Println(f.value)
+
 	switch f.fType {
 	case FilterTypeNotEQ:
 		return squirrel.NotEq{f.column: f.value}
